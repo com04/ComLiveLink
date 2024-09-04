@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\u\\pluginbuild54\\plugins\\comlivelink\\comlivelink\\source\\comlivelink\\private\\common\\clldevelopersettings.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\u\\pluginbuild54\\intermediate\\build\\win64\\x64\\pluginbuild54editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\u\\pluginbuild54\\plugins\\comlivelink\\comlivelink\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\comlivelink\\definitions.comlivelink.h",
+            "c:\\u\\pluginbuild54\\plugins\\comlivelink\\comlivelink\\source\\comlivelink\\private\\common\\clldevelopersettings.h",
+            "c:\\u\\pluginbuild54\\plugins\\comlivelink\\comlivelink\\intermediate\\build\\win64\\unrealeditor\\inc\\comlivelink\\uht\\clldevelopersettings.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

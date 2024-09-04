@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-ComLiveLinkEd.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\u\PluginBuilds\PluginBuild54\Intermediate\Build\Win64\x64\PluginBuild54Editor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"D:\u\PluginBuilds\PluginBuild54\Plugins\ComLiveLink\ComLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\ComLiveLinkEd\Module.ComLiveLinkEd.cpp.obj"
+"D:\u\PluginBuilds\PluginBuild54\Plugins\ComLiveLink\ComLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\ComLiveLinkEd\ComLiveLinkEd.cpp.obj"
+"D:\u\PluginBuilds\PluginBuild54\Plugins\ComLiveLink\ComLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\ComLiveLinkEd\AnimGraphNode_CLiveLink.cpp.obj"
+"D:\u\PluginBuilds\PluginBuild54\Plugins\ComLiveLink\ComLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\ComLiveLinkEd\Default.rc2.res"
+/OUT:"D:\u\PluginBuilds\PluginBuild54\Plugins\ComLiveLink\ComLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\ComLiveLinkEd\UnrealEditor-ComLiveLinkEd.lib"

@@ -1,0 +1,12 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.ComLiveLink.cpp.obj": [
+			"CLLReceiver.gen.cpp.obj",
+			"ComLiveLink.init.gen.cpp.obj",
+			"AnimNode_CLiveLink.cpp.obj",
+			"ComLiveLink.cpp.obj",
+			"CLLReceiver.cpp.obj"
+		]
+	}
+}

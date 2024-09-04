@@ -1,0 +1,22 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\u\\pluginbuild54\\plugins\\comlivelink\\comlivelink\\source\\comlivelink\\private\\comlivelink.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\u\\pluginbuild54\\intermediate\\build\\win64\\x64\\pluginbuild54editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\u\\pluginbuild54\\plugins\\comlivelink\\comlivelink\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\comlivelink\\definitions.comlivelink.h",
+            "c:\\u\\pluginbuild54\\plugins\\comlivelink\\comlivelink\\source\\comlivelink\\public\\comlivelink.h",
+            "d:\\u\\engine\\ue_5.4\\engine\\source\\runtime\\projects\\public\\interfaces\\ipluginmanager.h",
+            "d:\\u\\engine\\ue_5.4\\engine\\source\\runtime\\projects\\public\\plugindescriptor.h",
+            "d:\\u\\engine\\ue_5.4\\engine\\source\\runtime\\projects\\public\\custombuildsteps.h",
+            "d:\\u\\engine\\ue_5.4\\engine\\source\\runtime\\projects\\public\\localizationdescriptor.h",
+            "d:\\u\\engine\\ue_5.4\\engine\\source\\runtime\\projects\\public\\moduledescriptor.h",
+            "d:\\u\\engine\\ue_5.4\\engine\\source\\runtime\\projects\\public\\plugindisalloweddescriptor.h",
+            "d:\\u\\engine\\ue_5.4\\engine\\source\\runtime\\projects\\public\\pluginreferencedescriptor.h",
+            "d:\\u\\engine\\ue_5.4\\engine\\source\\runtime\\projects\\public\\versescope.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
