@@ -4,6 +4,7 @@
 
 #include "Common/CLLDeveloperSettings.h"
 
+#include "Async/Async.h"
 #include "Common/UdpSocketBuilder.h"
 #include "Dom/JsonValue.h"
 #include "Dom/JsonObject.h"
@@ -86,6 +87,8 @@ const TSharedPtr<FCLLPacketData>* UCLLReceiver::GetPacketData(const FName& InSub
 
 void UCLLReceiver::OnPacketReceived(const FArrayReaderPtr& InData, const FIPv4Endpoint& InEndpoint)
 {
+	// in runnable thread
+
 	TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(FString(InData->Num(), reinterpret_cast<UTF8CHAR*>(InData->GetData())));
 
 	TSharedPtr<FJsonObject> JsonObject;
@@ -130,7 +133,12 @@ void UCLLReceiver::OnPacketReceived(const FArrayReaderPtr& InData, const FIPv4En
 	}
 
 	NewPacketData->ControlType = ControlType;
-	PacketData.FindOrAdd(FName(*SubjectName)) = NewPacketData;
+
+	FName Subject = *SubjectName;
+	AsyncTask(ENamedThreads::GameThread, [this, Subject, NewPacketData]()
+		{
+			PacketData.FindOrAdd(Subject) = NewPacketData;
+		});
 }
 
 TSharedPtr<FCLLPacketData> UCLLReceiver::ReceivePosePakcet(const TSharedPtr<FJsonObject>& InJsonParams)
