@@ -44,7 +44,6 @@ class CLBProperty(bpy.types.PropertyGroup):
 	type : bpy.props.EnumProperty(name = 'Type', default=ECLLControlType.Pose.name, items =
 		[
 			(ECLLControlType.Pose.name, ECLLControlType.Pose.name, ''),
-			(ECLLControlType.Animation.name, ECLLControlType.Animation.name, ''),
 		])
 	# オプション設定
 	optional : bpy.props.BoolProperty(default = False)
@@ -100,9 +99,6 @@ class CLBLink(bpy.types.Operator):
 				return {'PASS_THROUGH'}
 			
 			params['bone_transforms'] = bone_transforms;
-		# todo
-		# elif property.type == ECLLControlType.Animation.name:
-			# pass
 		else:
 			print('Unknown control type: ' + property.type)
 			return {'PASS_THROUGH'}
