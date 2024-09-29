@@ -133,10 +133,21 @@ void UCLLReceiver::OnPacketReceived(const FArrayReaderPtr& InData, const FIPv4En
 	}
 
 	NewPacketData->ControlType = ControlType;
+	
+	bool bAccumulate = false;
+	if (Params->TryGetBoolField(TEXT("accumulate"), bAccumulate))
+	{
+		NewPacketData->bAccumulate = bAccumulate;
+	}
 
 	FName Subject = *SubjectName;
 	AsyncTask(ENamedThreads::GameThread, [this, Subject, NewPacketData]()
 		{
+			TSharedPtr<FCLLPacketData>* OldPacket = PacketData.Find(Subject);
+			if (NewPacketData->bAccumulate && OldPacket)
+			{
+				NewPacketData->MergeAccumulate(*OldPacket->Get());
+			}
 			PacketData.FindOrAdd(Subject) = NewPacketData;
 		});
 }
@@ -179,5 +190,14 @@ TSharedPtr<FCLLPacketData> UCLLReceiver::ReceivePosePakcet(const TSharedPtr<FJso
 		PoseData->Transforms.Add(FName(*BoneTransform.Key), Transform);
 	}
 	return PoseData;
+}
+
+
+void FCLLPosePacketData::MergeAccumulate(const FCLLPacketData& OldPacketData)
+{
+	const FCLLPosePacketData& OldPosePacketData = *reinterpret_cast<const FCLLPosePacketData*>(&OldPacketData);
+	FCLLBoneTransforms TmpBoneTransforms = Transforms;
+	Transforms = OldPosePacketData.Transforms;
+	Transforms.Append(TmpBoneTransforms);
 }
 

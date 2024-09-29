@@ -40,6 +40,12 @@ using FCLLAnimationData = TMap<float, FCLLBoneTransforms>;
 struct FCLLPacketData
 {
 	ECLLControlType ControlType = ECLLControlType::None;
+
+	/// True: ボーン個別で送信される。前回バッファから蓄積する False: ボーンをすべて一斉に送信している
+	bool bAccumulate = false;
+
+	virtual ~FCLLPacketData(){}
+	virtual void MergeAccumulate(const FCLLPacketData& OldPacketData) = 0;
 };
 
 /**
@@ -48,6 +54,8 @@ struct FCLLPacketData
 struct FCLLPosePacketData : public FCLLPacketData
 {
 	FCLLBoneTransforms Transforms;
+
+	virtual void MergeAccumulate(const FCLLPacketData& OldPacketData) override;
 };
 
 
