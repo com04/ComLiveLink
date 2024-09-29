@@ -32,13 +32,13 @@ https://com04.sakura.ne.jp/cll/wiki/index.php
 
 #### オプション
 + Pose Option
-  + Send max bones per frame / 1フレームの最大ボーン送信数 : 1フレームに処理するボーンの最大数。負荷が高い、送信エラーが出る場合に小さい値を設定してください
-  + Target Armature Name / 対象Armature名 : 送信対象のArmature名。任意の名前のArmatureを送信したい場合に。
-  + Sending Armatures / 送信中Armatures : 現在送信中のArmature名を表示しています。
+  + **Send max bones per frame / 1フレームの最大ボーン送信数** : 1フレームに処理するボーンの最大数。負荷が高い、送信エラーが出る場合に小さい値を設定してください
+  + **Target Armature Name / 対象Armature名** : 送信対象のArmature名。任意の名前のArmatureを送信したい場合に。
+  + **Sending Armatures / 送信中Armatures** : 現在送信中のArmature名を表示しています。
 + Advanced
   + Packet Option
-    + IP Address
-    + Port
+    + **IP Address**
+    + **Port**
   + Axis Option
     + 軸変換のオプション。Blender上とUE5上での軸が違う場合に設定をしてください。
 
